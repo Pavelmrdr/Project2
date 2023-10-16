@@ -36,20 +36,20 @@ const App = () => {
   ];
 
   let [indexNumber, setIndexNumber] = useState(0);
+  
+    const prevHandler = () => {
+      if (indexNumber === 0) {
+        setIndexNumber(3);
+      } else {
+        setIndexNumber(indexNumber - 1);
+      }
+    };
 
-  const rightHandler = () => {
+  const nextHandler = () => {
     if (indexNumber === 3) {
       setIndexNumber(0);
     } else {
       setIndexNumber(indexNumber + 1);
-    }
-  };
-
-  const leftHandler = () => {
-    if (indexNumber === 0) {
-      setIndexNumber(3);
-    } else {
-      setIndexNumber(indexNumber - 1);
     }
   };
 
@@ -63,18 +63,17 @@ const App = () => {
 
   return (
     <div className="container">
-        <h1 className="text-color">Our Reviews</h1>
-        <div className="line"></div>
+        
       <article>
-        { <img src={content[indexNumber].image} alt={content[indexNumber].name} />  }
-        <h3 className="text-color">{content[indexNumber].name}</h3>
-        <h5 className="position-color">{content[indexNumber].position}</h5>
-        <p className="dsc">{content[indexNumber].dsc}</p>
+        <img src={content[indexNumber].image} alt={content[indexNumber].name} />
+        <h3>{content[indexNumber].name}</h3>
+        <h5>{content[indexNumber].position}</h5>
+        <p>{content[indexNumber].dsc}</p>
         <div>
-          <button className="arrow" onClick={leftHandler}>←</button>
-          <button className="arrow" onClick={rightHandler}>→</button>
+          <button className="arrow" onClick={prevHandler}>←</button>
+          <button className="arrow" onClick={nextHandler}>→</button>
         </div>
-        <button onClick={randomHandler} className="rndm-btn">Surprise Me</button>
+        <button className="rndm-btn" onClick={randomHandler}>Surprise Me</button>
       </article>
     </div>
   );
