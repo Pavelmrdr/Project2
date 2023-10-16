@@ -1,0 +1,56 @@
+article {
+    width: 40rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  img {
+    height: auto;
+    max-width: 9rem;
+    padding-top: 15px;
+    border-radius: 50%;
+  }
+  
+  h3 {
+    color: rgb(17, 41, 66);
+  }
+  
+  h5 {
+    color: rgb(72, 166, 232);
+  }
+  
+  p {
+    height: 70px;
+    padding: 0 2rem;
+  }
+  
+  .arrow {
+    font-size: 2rem;
+    padding: 0;
+    margin: 0 10px;
+    background-color: white;
+    border: transparent;
+  }
+  
+  .arrow:hover {
+    cursor:pointer;
+  }
+  
+  .rndm-btn {
+    margin: 10px auto 20px auto;
+    padding: 5px 8px;
+    color: rgb(73,166,233);
+    background-color: rgb(235,246,255);
+    border: 0.1rem solid rgb(46,106,148);
+    border-radius: 0.5rem ;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+  }
+  
+  .rndm-btn:hover {
+    cursor:pointer;
+    color: rgb(17, 41, 66);
+    background-color: rgb(72, 166, 232);
+  }

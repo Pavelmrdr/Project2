@@ -7,6 +7,7 @@ import cristianBeresImg from "./images/1579200632404.jpeg";
 
 import "./index.css";
 import Header from "./components/Header";
+import Article from "./components/Article";
 
 const content = [
   {
@@ -36,47 +37,10 @@ const content = [
 ];
 
 const App = () => {
-
-  let [indexNumber, setIndexNumber] = useState(0);
-  
-    const prevHandler = () => {
-      if (indexNumber === 0) {
-        setIndexNumber(3);
-      } else {
-        setIndexNumber(indexNumber - 1);
-      }
-    };
-
-  const nextHandler = () => {
-    if (indexNumber === 3) {
-      setIndexNumber(0);
-    } else {
-      setIndexNumber(indexNumber + 1);
-    }
-  };
-
-  const randomHandler = () => {
-    setIndexNumber(Math.floor(Math.random() * (3 - 0 + 1)) + 0)
-  }
-
-  console.log(indexNumber)
-
-
-
   return (
     <div className="container">
         <Header />
-      <article>
-        <img src={content[indexNumber].image} alt={content[indexNumber].name} />
-        <h3>{content[indexNumber].name}</h3>
-        <h5>{content[indexNumber].position}</h5>
-        <p>{content[indexNumber].dsc}</p>
-        <div>
-          <button className="arrow" onClick={prevHandler}>←</button>
-          <button className="arrow" onClick={nextHandler}>→</button>
-        </div>
-        <button className="rndm-btn" onClick={randomHandler}>Surprise Me</button>
-      </article>
+        <Article content={content} />
     </div>
   );
 };
